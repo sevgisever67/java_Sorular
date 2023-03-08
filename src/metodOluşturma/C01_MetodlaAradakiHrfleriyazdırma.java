@@ -12,7 +12,10 @@ public class C01_MetodlaAradakiHrfleriyazdırma {
       // - kullanici str'da olan index'lerden daha buyuk bir index girerse hata mesaji
       // yazdirin.
 
-   aradakiharflaeriYazdır(str);
+        String metin="java iyidir hoştur amma çalışmak zordur";
+
+
+   aradakiharflaeriYazdır(metin);
 
 
 
@@ -23,7 +26,19 @@ public class C01_MetodlaAradakiHrfleriyazdırma {
         Scanner scan=new Scanner(System.in);
         System.out.println("java iyi hoş ama zordur");
         System.out.println("istediğiniz başlangıç ve bitiş indexini giriniz ");
+        int başlangiçİndex= scan.nextInt();
+        int bitisİndexi= scan.nextInt();
+        if (başlangiçİndex>=bitisİndexi){
+            System.out.println("başlangiç indexi bitiş indexinden büyük olamaz");
+            aradakiharflaeriYazdır(str);
+        } else if (başlangiçİndex>str.length()||bitisİndexi>str.length()) {
+            System.out.println("geçerli bi index numarası giriniz");
+            aradakiharflaeriYazdır(str);
+        }else {
+            System.out.println(str.substring(başlangiçİndex,bitisİndexi));
+            }
+        }
     }
 
 
-}
+
